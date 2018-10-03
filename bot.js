@@ -790,10 +790,18 @@ Server support: https://discord.gg/TFmRfzZ
 ==================================================================
 bot invite link: https://discordapp.com/oauth2/authorize?client_id=481622608534831104&permissions=2080898225&scope=bot
 ==================================================================
-`);
+`)
 
-    }
+       .setTimestamp()
+       .setFooter(message.author.username, message.author.avatarURL)
+message.author.sendEmbed(embed)
+
+.catch(() => {
+  message.channel.send('🚫الخاص مغلق');
 });
+
+}
+}); 
 
 
 client.on('message', message => {
