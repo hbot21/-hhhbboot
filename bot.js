@@ -642,21 +642,22 @@ bot invite link: https://discordapp.com/oauth2/authorize?client_id=4816226085348
 
 
 
-
-
-
-client.on('message', message => {
+client.on("message", message => {
     if (message.author.bot) return;
      if (message.content === prefix + "admin") {
-		 message.channel.send('**تم ارسال اوامر الادمنية في الخاص**');
-            
-	
-		 
+  const embedss = new Discord.RichEmbed() 
+      .setColor("RANDOM")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`**
+    شيك على الخاص
+     Check Your DM**`)
 
-
- message.author.sendMessage(`
-
-        ***__Administrative Orders__***
+		 message.channel.send(`<@${message.author.id}>`, {embed : embedss});
+  const embed = new Discord.RichEmbed() 
+      .setColor("RANDOM")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`
+  ***__Administrative Orders__***
 **
 『${prefix}setwelcomer / ترحيب بي الروم ال تبي  』
 
@@ -725,10 +726,23 @@ Server support: https://discord.gg/TFmRfzZ
 ==================================================================
 bot invite link: https://discordapp.com/oauth2/authorize?client_id=481622608534831104&permissions=2080898225&scope=bot
 ==================================================================
-`);
 
-    }
+`)
+
+       .setTimestamp()
+       .setFooter(message.author.username, message.author.avatarURL)
+message.author.sendEmbed(embed)
+
+.catch(() => {
+  message.channel.send('🚫الخاص مغلق');
 });
+
+}
+}); 
+
+
+
+
 
 
 
