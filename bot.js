@@ -70,17 +70,6 @@ message.channel.createWebhook(message.author.username, message.author.avatarURL)
 });
 
 
-client.on('message', message => {
-       if(message.content.startsWith(`${prefix}support`)){
-           if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
-           var embed = new Discord.RichEmbed()
-           .setTitle("Support Server")
-           .setURL("https://discord.gg/TFmRfzZ")
-           .setTimestamp()
-           .setColor("RANDOM")
-           message.channel.send({embed})
-       }
-   });
 
 client.on('message', message => {
             if(!message.channel.guild) return;
@@ -114,35 +103,7 @@ Server Count: __${guild.memberCount}__**`)
 
 
 
-  client.on('message', msg => {//msg
-    if (msg.content === '$general') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/487245555785924629/488247808747634699/1535141472722.png"})
-    }
-  });;
 
-  client.on('message', msg => {//msg
-    if (msg.content === '$admin') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/487245555785924629/488247808747634699/1535141472722.png"})
-    }
-  });;
-  client.on('message', msg => {//msg
-    if (msg.content === '$games') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/487245555785924629/488247808747634699/1535141472722.png"})
-    }
-  });;
-
-
-  client.on('message', msg => {//msg
-    if (msg.content === '$music') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/487245555785924629/488247808747634699/1535141472722.png"})
-    }
-  });;
-
-client.on('message', msg => {//msg
-    if (msg.content === 'السلام عليكم') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477438358902276099/478177205164310529/004ca53f54b2ff2c.png"})
-    }
-  });;
 
         client.on('message', async message => {
             if(message.content.includes('discord.gg')){
@@ -335,7 +296,7 @@ ${users.join('\n')}
 }
 });
 client.on('message' , message => {
-if(message.content === '!voice') {
+if(message.content === '$voice') {
     message.channel.send(`**عدد الاشخاص الموجودين بـ  الرومات الصوتيه : ${message.guild.members.filter(g => g.voiceChannel).size}**`);
 }
 });
@@ -489,17 +450,7 @@ client.on('message' , message => {
 
 
   
-client.on('message', message => {
-      if (!devs.includes(message.author.id)) return;
-  if (message.content.startsWith(adminprefix + 'hbc')) {
-    if (!devs.includes(message.author.id)) return; 
-let args = message.content.split(' ').slice(1).join(' ');
 
-message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}});
 
 client.on('ebnklb',function(ebnklb) {
     
@@ -3878,9 +3829,9 @@ const channel = sWlc[message.guild.id].channel
   if (message.content.startsWith(prefix + "setwelcomer")) {
     if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
     let newChannel = message.content.split(' ').slice(1).join(" ")
-    if(!newChannel) return message.reply(`**${prefix}setwelcomer <channel name>**`)
+    if(!newChannel) return message.reply(`**${prefix}setwelcomer احط اسم الروم تبي**`)
     sWlc[message.guild.id].channel = newChannel
-    message.channel.send(`**${message.guild.name}'s channel has been changed to ${newChannel}**`);
+    message.channel.send(`**${message.guild.name}'${newChannel} تم عمل ترحيب بي روم **`);
   }
 });
  
