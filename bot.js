@@ -4464,7 +4464,37 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 });
 
 
+client.on("message", message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "support") {
+  const embedss2 = new Discord.RichEmbed() 
+      .setColor("RANDOM")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`**
+    تم ارسال رابط السيرفر خاص
+     Check Your DM**`)
 
+		 message.channel.send(`<@${message.author.id}>`, {embed : embedss2});
+  const embed = new Discord.RichEmbed() 
+      .setColor("RANDOM")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`**
+رابط سيرفر الدعم الفني
+
+https://discord.gg/GygG9s4
+
+**`)
+
+       .setTimestamp()
+       .setFooter(message.author.username, message.author.avatarURL)
+message.author.sendEmbed(embed)
+
+.catch(() => {
+  message.channel.send('🚫الخاص مغلق');
+});
+
+}
+}); 
 
 //MHSTR END NOW THIS IS END
 client.login(process.env.BOT_TOKEN);
