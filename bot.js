@@ -366,16 +366,7 @@ coll.first().delete()
   }
 })
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$help||$inv`,"http://twitch.tv/S-F")
-client.user.setStatus("dnd")
-});
+
 
 
 
@@ -455,7 +446,7 @@ client.on('message' , message => {
 client.on('ebnklb',function(ebnklb) {
     
     if(ebnklb.content.startsWith(`<@${client.user.id}>`)) {
-        ebnklb.channel.send('Hey Im **- H Bot !**  A Nice Bot Developed By:`MHSTR`')
+        ebnklb.channel.send('Hey Im **- Vip Bot !**  A Nice Bot Developed By:`MHSTR`')
         ebnklb.channel.send('My Prefix `$`')
 
     }
@@ -932,7 +923,7 @@ client.on('message', message => {
 var embed = new Discord.RichEmbed()
 .setColor('RANDOM')
  .setThumbnail(message.author.avatarURL) 
-.addField('H BOT' ,
+.addField('VIP BOT' ,
 `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
 message.channel.sendEmbed(embed);
 console.log('[38ab] Send By: ' + message.author.username)
@@ -1179,7 +1170,7 @@ var v1 = new Discord.RichEmbed()
   v1.setTimestamp(new Date())
   v1.setColor("#6a109d")
   v1.setDescription('***__ انتظر .. جاري الحصول  __***')
-  v1.setFooter("# | - H Bot |")
+  v1.setFooter("# - vip Bot")
 var heroo = new Discord.RichEmbed()
 .setColor('#6a109d')
 .setTimestamp(new Date())
